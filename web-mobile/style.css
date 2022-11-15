@@ -8,6 +8,7 @@ body {
     margin: 10px;
     text-align: center;
     font-family: arial;
+    flex: 0 0 33.333333%
 }
 
 #addButt {
@@ -29,7 +30,7 @@ body {
 .btn {
     position: relative;
     left: 1300px;
-    top: -4530px;
+    top: 0px;
     border: none;
     font-size: 20px;
     cursor: pointer;
