@@ -14,7 +14,7 @@ let products = [{
         price: "£10",
         loc: "Central London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/french.png"
     },
     {
         id: 1003,
@@ -23,7 +23,7 @@ let products = [{
         price: "£15",
         loc: "East London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/port.png"
     },
     {
         id: 1004,
@@ -32,7 +32,7 @@ let products = [{
         price: "£5",
         loc: "North London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/eng.png"
     },
     {
         id: 1005,
@@ -41,7 +41,7 @@ let products = [{
         price: "£15",
         loc: "East London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/spanish.png"
     },
     {
         id: 1006,
@@ -50,7 +50,7 @@ let products = [{
         price: "£25",
         loc: "West London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/german.png"
     },
     {
         id: 1007,
@@ -59,7 +59,7 @@ let products = [{
         price: "£20",
         loc: "Noth London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/mandarin.png"
     },
     {
         id: 1008,
@@ -68,7 +68,7 @@ let products = [{
         price: "£30",
         loc: "North London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/swahi.png"
     },
     {
         id: 1009,
@@ -77,7 +77,7 @@ let products = [{
         price: "£25",
         loc: "South London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/russ.png"
     },
     {
         id: 1010,
@@ -86,6 +86,6 @@ let products = [{
         price: "£20",
         loc: "East London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/arabic.png"
     },
 ]
