@@ -1,11 +1,12 @@
-let products = [{
+let product = [{
         id: 1001,
         title: "Japanese Lesson",
         description: "Japanese lessons tought by <em>professional</em> Japanese speakers!",
         price: "£20",
         loc: "South London",
         spaces: 5,
-        image: "assets/japanese.png"
+        image: "assets/japanese.png",
+        rating: 5
     },
     {
         id: 1002,
@@ -14,7 +15,8 @@ let products = [{
         price: "£10",
         loc: "Central London",
         spaces: 5,
-        image: "assets/french.png"
+        image: "assets/french.png",
+        rating: 3
     },
     {
         id: 1003,
@@ -23,7 +25,8 @@ let products = [{
         price: "£15",
         loc: "East London",
         spaces: 5,
-        image: "assets/port.png"
+        image: "assets/port.png",
+        rating: 4
     },
     {
         id: 1004,
@@ -32,7 +35,8 @@ let products = [{
         price: "£5",
         loc: "North London",
         spaces: 5,
-        image: "assets/eng.png"
+        image: "assets/eng.png",
+        rating: 3
     },
     {
         id: 1005,
@@ -41,7 +45,8 @@ let products = [{
         price: "£15",
         loc: "East London",
         spaces: 5,
-        image: "assets/spanish.png"
+        image: "assets/spanish.png",
+        rating: 4
     },
     {
         id: 1006,
@@ -50,7 +55,8 @@ let products = [{
         price: "£25",
         loc: "West London",
         spaces: 5,
-        image: "assets/german.png"
+        image: "assets/german.png",
+        rating: 4
     },
     {
         id: 1007,
@@ -59,7 +65,8 @@ let products = [{
         price: "£20",
         loc: "Noth London",
         spaces: 5,
-        image: "assets/mandarin.png"
+        image: "assets/mandarin.png",
+        rating: 4
     },
     {
         id: 1008,
@@ -68,7 +75,8 @@ let products = [{
         price: "£30",
         loc: "North London",
         spaces: 5,
-        image: "assets/swahi.png"
+        image: "assets/swahi.png",
+        rating: 3
     },
     {
         id: 1009,
@@ -77,7 +85,8 @@ let products = [{
         price: "£25",
         loc: "South London",
         spaces: 5,
-        image: "assets/russ.png"
+        image: "assets/russ.png",
+        rating: 4
     },
     {
         id: 1010,
@@ -86,6 +95,7 @@ let products = [{
         price: "£20",
         loc: "East London",
         spaces: 5,
-        image: "assets/arabic.png"
+        image: "assets/arabic.png",
+        rating: 3
     },
 ]

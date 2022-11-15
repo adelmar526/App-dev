@@ -10,34 +10,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Coursework</title>
+    <script src="product.js"></script>
 </head>
 
 <body>
+
+
+
+
     <!--Below we are introducing the div which will hold all of the html-->
     <!--we gave this div an ID and will use this ID in javascript to write code using vue.-->
     <div id="app">
-        <img v-bind:src="product.image">
-        <h1 v-text="product.title"></h1>
-        <p class="description" v-html="product.description"></p>
-        <p class="Location">
-            Location: {{product.loc}}
-            <!--here we are refering to the script code where we set the values. We are calling the array and the variable name found in the array-->
-        </p>
-        <p class="price">
-            Price: {{product.price}}
-        </p>
-        <p v-html>Spaces: {{checkspace}}</p>
-        <!--the line above is calling a function found in the javascript code called checkspace which decreases the number of spaces based on what is added to basket/
+        <div v-for="product in product">
+            <img v-bind:src="product.image">
+            <h1 v-text="product.title"></h1>
+            <p class="description" v-html="product.description"></p>
+            <p class="Location">
+                Location: {{product.loc}}
+                <!--here we are refering to the script code where we set the values. We are calling the array and the variable name found in the array-->
+            </p>
+            <p class="price">
+                Price: {{product.price}}
+            </p>
+            <p v-html>Spaces: {{checkspace}}</p>
+            <!--the line above is calling a function found in the javascript code called checkspace which decreases the number of spaces based on what is added to basket/
             how many times purchase is clicked-->
-        <button class="Addbtn" id="addButt" v-on:click="addItem" v-if="canAddToCart">Purchase Lesson</button>
-        <button disabled="true" class="Addbtn" id="addButt2" v-else>Purchase Lesson</button>
+            <button class="Addbtn" id="addButt" v-on:click="addItem" v-if="canAddToCart">Purchase Lesson</button>
+            <button disabled="true" class="Addbtn" id="addButt2" v-else>Purchase Lesson</button>
+        </div>
         <button class="btn">{{cartCount}}<span class="fa fa-shopping-basket"></span>Basket</button>
 
 
 
     </div>
 
-    </div>
 
     <!-------------------------------------------------------------------------------------------->
     <script type="text/javascript">
@@ -45,15 +51,7 @@
             el: '#app',
             data: {
                 sitename: "LessonRUs",
-                product: {
-                    id: 1001,
-                    title: "Japanese Lesson",
-                    description: "Japanese lessons tought by <em>professional</em> Japanese speakers!",
-                    price: "£20",
-                    loc: "London",
-                    spaces: 5,
-                    image: "assets/japanese.png"
-                },
+                product: product,
                 //the line below is the cart array
                 cart: []
             },
