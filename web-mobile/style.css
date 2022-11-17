@@ -50,6 +50,34 @@ body {
     width: 0px;
 }
 
+.sort {
+    position: relative;
+    left: 120px;
+}
+
+.bttn {
+    background: #000;
+    color: white;
+}
+
+.bttn:hover {
+    background: grey;
+}
+
+.pref {
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    left: 385px;
+    top: -40px;
+}
+
+.img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
 .prodcard {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
