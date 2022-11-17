@@ -21,9 +21,16 @@
     <!--Below we are introducing the div which will hold all of the html-->
     <!--we gave this div an ID and will use this ID in javascript to write code using vue.-->
     <div id="app">
-        <h1>LanguagesRUS</h1>
+        <h1 id="page">LanguagesRUS</h1>
+        <div class="search">
+            <input class="stext" type="text" name="" placeholder="Type to search">
+            <a class="sbtn" href="#">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+
+        </div>
         <button class="btn">{{cartCount}}<span class="fa fa-shopping-basket"></span>Basket</button>
-        <div v-for="product in product">
+        <div class="prodcard" v-for="product in product">
             <img v-bind:src="product.image">
             <h1 v-text="product.title"></h1>
             <p class="description" v-html="product.description"></p>
@@ -42,7 +49,12 @@
             <span v-if='product.spaces === cartprodCount(product.id)'>Out of stock</span>
             <span v-else-if="product.spaces-cartprodCount(product.id)<5">Only {{product.spaces-cartprodCount(product.id)}} left!!</span>
             <span v-else>Buy Now!!!</span>
+            <div>
+                <span v-for='n in product.rating'>★</span>
+                <span v-for='n in 5 - product.rating'>☆</span>
+            </div>
         </div>
+
 
 
 

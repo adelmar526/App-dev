@@ -3,12 +3,70 @@ body {
 }
 
 #app {
+    overflow: hidden;
+}
+
+.search {
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    height: 40px;
+    border-radius: 40px;
+}
+
+.search:hover>.stext {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search:hover>.sbtn {
+    background: grey;
+}
+
+.sbtn {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stext {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.prodcard {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    margin: 10px;
+    margin: 15px;
     text-align: center;
     font-family: arial;
-    flex: 0 0 33.333333%
+    float: left;
+    padding: 0px;
+    height: 550px;
+    position: relative;
+    right: -100px;
+}
+
+#page {
+    position: relative;
+    left: 600px;
+    top: 0px;
 }
 
 #addButt {
@@ -29,8 +87,8 @@ body {
 
 .btn {
     position: relative;
-    left: 1300px;
-    top: 0px;
+    left: -150px;
+    top: -50px;
     border: none;
     font-size: 20px;
     cursor: pointer;
