@@ -64,7 +64,7 @@
                         <td><button v-on:click="removeitem(product)">x</button></td>
                     </tr>
                 </table>
-                <a href="checkout.html"><button v-on:click="opencart = true">checkout</button></a>
+                <a href="checkout.html"><button>checkout</button></a>
             </div>
         </div>
         <div class="prodcard" v-for="product in sortItem">
@@ -108,7 +108,6 @@
                 product: product,
                 sortP: '',
                 searchS: '',
-                sortby: 'asc',
                 opencart: false,
                 //the line below is the cart array
                 cart: []
@@ -140,11 +139,7 @@
                 canAddToCart(product) {
                     return product.spaces > this.cartprodCount(product.id)
                 },
-                removeitem(product) {
-                    this.count--
-                        this.cart.splice(this.cart, indexOf(product), 1)
-                    localStorage.setItem(StorageKey, JSON.stringify(this.cart))
-                }
+
 
 
 
@@ -174,14 +169,7 @@
                         return arrayS;
                     }
                 },
-                sortedorder: function() {
-                    // if sorting in ascending order
-                    if (this.sortby === 'asc') {
-                        return this.product.sort((a, b) => (a[this.sortP] > b[this.sortP]) ? 1 : ((b[this.sortP] > a[this.sortP]) ? -1 : 0));
-                    }
-                    // if sorting in descending order
-                    return this.product.sort((a, b) => (a[this.sortP] > b[this.sortP]) ? -1 : ((b[this.sortP] > a[this.sortP]) ? 1 : 0));
-                },
+
 
 
 
