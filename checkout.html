@@ -9,39 +9,10 @@
 
         <div id="Output Checkout">
             <h3>Order Information</h3>
-            <p>First Name: {{FullName}}</p>
-            <p>Phone Number: {{PhoneNumber}}</p>
+            <p>First Name: </p>
+            <p>Phone Number: </p>
         </div>
 
         <div id="Submit">
-            <button v-on:click="SubmitForm()" v-bind:disabled="this.FullName == '' || this.PhoneNumber == ' '">
-                <span v-if="this.FullName == ' ' || this.PhoneNumber == ' '">Enter Details</span>
-                <span v-else>Checkout</span>
-            </button>
+            <button v-on:click="SubmitForm()" v-bind:disabled="this.FullName == '' || this.PhoneNumber == ' '">Submit</button>
         </div>
-
-        <div id="Result">
-        </div>
-    </div>
-
-    <script>
-        const {
-            createApp
-        } = Vue
-        createApp({
-            data() {
-                return {
-                    FullName: '',
-                    PhoneNumber: '',
-                }
-            },
-            methods: {
-                SubmitForm() {
-                    alert('Your Order has Been Submitted!! ' + this.FullName)
-                }
-            },
-        }).mount('#Box')
-    </script>
-</body>
-
-</html>
