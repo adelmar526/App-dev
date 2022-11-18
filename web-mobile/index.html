@@ -14,10 +14,6 @@
 </head>
 
 <body>
-
-
-
-
     <!--Below we are introducing the div which will hold all of the html-->
     <!--we gave this div an ID and will use this ID in javascript to write code using vue.-->
     <div id="app">
@@ -34,7 +30,7 @@
             <button class="bttn" v-on:click="sortP ='title'">Subject</button>
             <button class="bttn" v-on:click="sortP ='loc'">Location</button>
             <button class="bttn" v-on:click="sortP ='price'">Price</button>
-            <button class="bttn" v-on:click="sortP ='spaces'">Spaces</button>
+            <button class="bttn" v-on:click="sortP ='rating'">Rating</button>
         </div>
         <div class="pref">
             <input id="asc" type="radio" name="order" v-on:click="" value="asc">
@@ -43,9 +39,34 @@
             <input id="des" type="radio" name="order" v-on:click="" value="des">
             <label for="asc">des</label>
         </div>
-        <!--The code below is for the cart -->
-        <button class="btn">{{cartCount}}<span class="fa fa-shopping-basket"></span>Basket</button>
-        <!--the code below is to display the lessons-->
+        <button class="btn" v-on:click="opencart = true">{{cartCount}}<span class="fa fa-shopping-basket"></span>Basket</button>
+        <div class="showcartwindow">
+            <div class="cartwindow" v-if="opencart" @click="opencart = false"></div>
+            <!--The code below is for the cart -->
+
+            <!--the code below is to display the lessons-->
+            <div class="showcart" v-if="opencart">
+                <button class="close" v-on:click="opencart = false">x</button>
+                <h1>Cart</h1>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Subject</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th>Remove</th>
+                    </tr>
+                    <tr v-for="(cart,n) in cart">
+                        <td><img v-bind:src="cart.image"></td>
+                        <td>{{cart.title}}</td>
+                        <td>{{cart.loc}}</td>
+                        <td>{{cart.price}}</td>
+                        <td><button v-on:click="removeitem(product)">x</button></td>
+                    </tr>
+                </table>
+                <a href="checkout.html"><button v-on:click="opencart = true">checkout</button></a>
+            </div>
+        </div>
         <div class="prodcard" v-for="product in sortItem">
             <img class="img" v-bind:src="product.image">
             <h1 v-text="product.title"></h1>
@@ -87,6 +108,8 @@
                 product: product,
                 sortP: '',
                 searchS: '',
+                sortby: 'asc',
+                opencart: false,
                 //the line below is the cart array
                 cart: []
             },
@@ -95,7 +118,14 @@
                     if (product.availablesp > 0) {
                         product.availablesp--;
                     }
-                    this.cart.push(product.id);
+                    this.cart.push({
+                        image: product.image,
+                        id: product.id,
+                        title: product.title,
+                        description: product.description,
+                        price: product.price,
+                        loc: product.loc,
+                    });
 
                 },
                 cartprodCount(id) {
@@ -110,6 +140,11 @@
                 canAddToCart(product) {
                     return product.spaces > this.cartprodCount(product.id)
                 },
+                removeitem(product) {
+                    this.count--
+                        this.cart.splice(this.cart, indexOf(product), 1)
+                    localStorage.setItem(StorageKey, JSON.stringify(this.cart))
+                }
 
 
 
@@ -138,7 +173,16 @@
                         });
                         return arrayS;
                     }
-                }
+                },
+                sortedorder: function() {
+                    // if sorting in ascending order
+                    if (this.sortby === 'asc') {
+                        return this.product.sort((a, b) => (a[this.sortP] > b[this.sortP]) ? 1 : ((b[this.sortP] > a[this.sortP]) ? -1 : 0));
+                    }
+                    // if sorting in descending order
+                    return this.product.sort((a, b) => (a[this.sortP] > b[this.sortP]) ? -1 : ((b[this.sortP] > a[this.sortP]) ? 1 : 0));
+                },
+
 
 
             }
