@@ -82,8 +82,8 @@
             <!--the code below creates different buttons and allocates them to different functionality -->
             <button class="Addbtn" id="addButt" v-on:click='addItem(product)' v-if="canAddToCart(product)">Purchase Lesson</button>
             <button disabled="true" class="Addbtn" id="addButt2" v-else>Purchase Lesson</button>
-            <span v-if='product.spaces === cartprodCount(product.id)'>Out of stock</span>
-            <span v-else-if="product.spaces-cartprodCount(product.id)<5">Only {{product.spaces-cartprodCount(product.id)}} left!!</span>
+            <span v-if='product.availablesp === cartprodCount(product.spaces)'>Out of stock</span>
+            <span v-else-if="product.availablesp-cartprodCount(product.spaces)<5">Only {{product.availablesp-cartprodCount(product.id)}} left!!</span>
             <span v-else>Buy Now!!!</span>
             <!--The code below displays the rating based on the rating given. -->
             <div>
@@ -118,12 +118,12 @@
                         product.availablesp--;
                     }
                     this.cart.push({
-                        image: product.image,
                         id: product.id,
                         title: product.title,
-                        description: product.description,
-                        price: product.price,
+                        image: product.image,
                         loc: product.loc,
+                        price: product.price,
+
                     });
 
                 },
@@ -137,7 +137,7 @@
                     return count;
                 },
                 canAddToCart(product) {
-                    return product.spaces > this.cartprodCount(product.id)
+                    return product.availablesp > this.cartprodCount(product.spaces)
                 },
 
 
@@ -146,7 +146,7 @@
             },
             computed: { // computed functions are functions which require the machine to make decisons and changes based on actions perfomed on the application
                 cartCount: function() {
-                    return this.cart.length || "";
+                    return this.cart.length || "0";
 
                 },
                 sortItem: function() {
