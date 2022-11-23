@@ -96,11 +96,13 @@
 
 
 
+
     </div>
 
 
     <!-------------------------------------------------------------------------------------------->
     <script type="text/javascript">
+        const StorageKey = "cart";
         let webstore = new Vue({ // The Vue instance
             el: '#app',
             data: {
@@ -140,6 +142,16 @@
                     return product.availablesp > this.cartprodCount(product.spaces)
                 },
 
+                removeitem(Product) {
+
+
+                    this.cart.splice(this.cart.indexOf(product), 1)
+                    localStorage.setItem(StorageKey, JSON.stringify(this.cart));
+
+
+
+
+                },
 
 
 
